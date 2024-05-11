@@ -1,5 +1,5 @@
 import { integer, text, sqliteTable } from 'drizzle-orm/sqlite-core'
-import { users } from './user'
+import { users } from './users'
 import { sql } from 'drizzle-orm'
 import { messageType } from './messageType'
 

@@ -1,12 +1,22 @@
-{
+{  
+  "ts-node": {
+    // Do not forget to `npm i -D tsconfig-paths`
+    "require": ["tsconfig-paths/register"]
+  },
   "compilerOptions": {
     "target": "es6",
     "lib": ["es5", "es6", "dom"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "noImplicitReturns": false,
     "module": "commonjs",
     "moduleResolution": "node",
-    "baseUrl": "src/",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@db/*": ["db/*"],
+      "@middlewares/*": ["src/middlewares/*"],
+    },
     "typeRoots": ["./src/types", "./node_modules/@types"],
     "resolveJsonModule": true,
     "outDir": "./dist",
@@ -15,10 +25,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true
   },
   "include": ["./src/**/*.tsx", "./src/**/*.ts"],
-  "exclude": ["node_modules", "test/**/*.ts"]
+  "exclude": ["node_modules", "test/**/*.ts"],
+  
 }
